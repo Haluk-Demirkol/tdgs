@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}Ödeme Sayfası{% endblock %}
+
+{% block content %}
+<div class="container mt-5" style="max-width:600px;">
+  <h2 class="mb-3">Sigorta Ödemesi</h2>
+  <p class="text-muted">Ödemenizi güvenle tamamlayabilirsiniz.</p>
+
+  <div class="card p-3 mb-4">
+    <h5 class="mb-2">{{ sigorta_sirketi }}</h5>
+    <p><strong>Ürün:</strong> {{ urun_ad }}</p>
+    <p><strong>Peşin:</strong> {{ pesin }} TL</p>
+    <p><strong>Taksit:</strong> {{ taksit_sayisi }} x {{ birim_taksit }} TL</p>
+  </div>
+
+  <form>
+    <input type="text" class="form-control mb-2" placeholder="Kart Üzerindeki Ad Soyad">
+    <input type="text" class="form-control mb-2" placeholder="Kart Numarası">
+    <div class="row">
+      <div class="col"><input type="text" class="form-control mb-2" placeholder="AA/YY"></div>
+      <div class="col"><input type="text" class="form-control mb-2" placeholder="CVV"></div>
+    </div>
+    <button class="btn btn-success w-100">Ödemeyi Tamamla</button>
+  </form>
+
+  <div class="text-center mt-3">
+    <img src="/static/img/ssl-secure.png" height="30" alt="SSL Güvenli">
+    <p class="text-muted small">Bu sayfa 256-bit SSL ile korunmaktadır. Kart bilgileriniz kaydedilmez.</p>
+  </div>
+</div>
+{% endblock %}
+

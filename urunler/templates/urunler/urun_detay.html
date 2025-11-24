@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}{{ urun.ad }}{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+  <h2>{{ urun.ad }}</h2>
+  <p>{{ urun.aciklama }}</p>
+  <img src="{{ urun.gorsel.url }}" class="img-fluid mb-4">
+
+  <form method="post" enctype="multipart/form-data" class="border p-3 rounded">
+    {% csrf_token %}
+    <h5>Teklif Talep Formu</h5>
+    <input type="hidden" name="urun_id" value="{{ urun.id }}">
+    <div class="mb-2"><input type="text" name="ad" class="form-control" placeholder="Adınız" required></div>
+    <div class="mb-2"><input type="text" name="soyad" class="form-control" placeholder="Soyadınız" required></div>
+
+    <div class="mb-2"><input type="text" name="tc_kimlik_no" class="form-control" placeholder="T.C. Kimlik No"
+       maxlength="11" pattern="\d{11}" title="11 haneli rakam girin" required></div>
+    <div class="mb-2"><input type="tel" name="cep_telefonu" class="form-control"
+       placeholder="XXX XXX XXXX" pattern="s?\d{3}\s?\d{3}\s?\d{4}"
+       maxlength="10" required title="5 ile başlayan 11 haneli Türk GSM numarası girin"></div>
+    <div class="mb-2"><input type="email" name="eposta" class="form-control" placeholder="E-posta Adresi" required></div>
+
+    <div class="mb-2"><input type="file" name="belge" class="form-control" accept="image/*,application/pdf"></div>
+    <button type="submit" class="btn btn-primary">Teklif İste</button>
+  </form>
+</div>
+{% endblock %}

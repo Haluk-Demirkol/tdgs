@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Ödeme Başarısız</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f8d7da;
+            color: #721c24;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 400px;
+            margin: 80px auto;
+            background: #fff;
+            border: 1px solid #f5c6cb;
+            border-radius: 8px;
+            padding: 32px 24px;
+            text-align: center;
+        }
+        .icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+        a.button {
+            display: inline-block;
+            margin-top: 24px;
+            padding: 10px 24px;
+            background: #721c24;
+            color: #fff;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a.button:hover {
+            background: #a71d2a;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="icon">❌</div>
+        <h1>Ödeme Başarısız</h1>
+        <p>Ödemeniz gerçekleştirilemedi. Lütfen tekrar deneyiniz veya farklı bir ödeme yöntemi kullanınız.</p>
+        <a href="{% url 'odeme' %}" class="button">Tekrar Dene</a>
+    </div>
+</body>
+</html>

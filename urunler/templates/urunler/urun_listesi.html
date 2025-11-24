@@ -1,0 +1,35 @@
+
+{% extends "base.html" %}
+
+{% block title %}Ürünler{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+  <h5 class="mb-4">Lütfen teklif almak istediğiniz sigorta tipini seçiniz.</h5>
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
+    {% for urun in urunler|slice:":8" %}
+      <div class="col">
+        <div class="card h-100 shadow-sm position-relative">
+          <img src="{{ urun.gorsel.url }}" class="card-img-top" alt="{{ urun.ad }}">
+          <div class="card-body">
+            <h5 class="card-title">{{ urun.ad }}</h5>
+            <p class="card-text text-muted">{{ urun.aciklama|truncatewords:15 }}</p>
+          </div>
+          <div class="card-footer bg-transparent border-0">
+            <a href="{% url 'urundetay' urun.id %}" class="btn btn-outline-primary w-100">Detay</a>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+<style>
+.card:hover {
+  transform: scale(1.02);
+  transition: 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+</style>
+{% endblock %}
+

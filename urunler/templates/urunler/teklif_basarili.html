@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Teklif Talebi Alındı{% endblock %}
+
+{% block content %}
+<div class="container mt-5 text-center">
+    <h3 class="text-success">✔ Teklif Talebiniz Başarıyla Alındı</h3>
+    <p class="lead mt-3">Firmamıza ulaştı. En kısa sürede teklifimizi size ulaştıracağız.</p>
+    <a href="{% url 'urunler' %}" class="btn btn-outline-primary mt-4">Ana Sayfaya Dön</a>
+</div>
+{% endblock %}
+

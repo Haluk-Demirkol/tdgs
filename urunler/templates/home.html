@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}Ana Sayfa - TDG Sigorta{% endblock %}
+
+{% block content %}
+  <div class="text-center">
+    <h1>Hoşgeldiniz</h1>
+    <p>TDG Sigorta’ya hoşgeldiniz. Ürünlerimizi görmek için aşağıdaki butona tıklayın.</p>
+    <a href="{% url 'urun_listesi' %}" class="btn btn-primary">Ürünler</a>
+  </div>
+{% endblock %}
